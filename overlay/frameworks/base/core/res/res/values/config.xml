@@ -134,8 +134,6 @@
     <bool translatable="false" name="config_cbrs_supported">true</bool>
 
     <!-- IWLAN-->
-    <string name="config_wlan_data_service_package">com.google.android.iwlan</string>
-    <string name="config_wlan_network_service_package">com.google.android.iwlan</string>
     <bool name="config_wlan_data_service_conn_persistence_on_restart">false</bool>
 
     <!-- Boolean indicating USSD over IMS is allowed.
@@ -149,7 +147,7 @@
     <bool name="config_device_vt_available">true</bool>
 
     <!-- Flag specifying whether WFC over IMS is availasble on device -->
-    <bool name="config_device_wfc_ims_available">true</bool>
+    <bool name="config_device_wfc_ims_available">false</bool>
 
     <!-- An integer representing a timeout value in milliseconds that will be used to delay a
          radio power off command until IMS deregistration completes. If 0, this feature is disabled
