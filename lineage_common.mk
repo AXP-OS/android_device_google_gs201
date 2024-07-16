@@ -13,8 +13,6 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
-    ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
 # GMS
 ifeq ($(WITH_GMS),true)
@@ -25,11 +23,9 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += ro.opa.eligible_device=true
 
 # Lineage Health
-include hardware/google/pixel/lineage_health/device.mk
 
 # Parts
 PRODUCT_PACKAGES += \
-    GoogleParts
 
 # Touch
 include hardware/google/pixel/touch/device.mk
