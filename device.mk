@@ -25,10 +25,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
 POSTINSTALL_OPTIONAL_system=true
 
 # Set Vendor SPL to match platform
-VENDOR_SECURITY_PATCH = 2023-09-05
+VENDOR_SECURITY_PATCH = 2023-10-01
 
 # Set boot SPL
-BOOT_SECURITY_PATCH = 2023-09-05
+BOOT_SECURITY_PATCH = 2023-10-01
 
 # TODO(b/207450311): Remove this flag once implemented
 USE_PIXEL_GRALLOC := false
@@ -408,11 +408,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
-# eSIM MEP Feature
-ifneq ($(DISABLE_TELEPHONY_EUICC),true)
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.euicc.mep.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.mep.xml
-endif
 
 # default usb debug functions
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
@@ -852,8 +847,6 @@ endif
 PRODUCT_PACKAGES += \
 	vndk-libs
 
-PRODUCT_ENFORCE_RRO_TARGETS := \
-	framework-res
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
