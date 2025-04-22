@@ -58,3 +58,7 @@ endif
 
 # Verified Boot
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+
+# even though we include vendor/axp/config/common.mk we need to include AXP's own BoardConfig
+# (after the above definitions & includes), too so we we can make use of the conditions within
+include vendor/axp/BoardConfigVendor.mk
