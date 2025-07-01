@@ -25,10 +25,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
 POSTINSTALL_OPTIONAL_system=true
 
 # Set Vendor SPL to match platform
-VENDOR_SECURITY_PATCH = 2023-09-05
+VENDOR_SECURITY_PATCH = 2023-10-01
 
 # Set boot SPL
-BOOT_SECURITY_PATCH = 2023-09-05
+BOOT_SECURITY_PATCH = 2023-10-01
 
 # TODO(b/207450311): Remove this flag once implemented
 USE_PIXEL_GRALLOC := false
@@ -56,7 +56,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # OEM Unlock reporting
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	ro.oem_unlock_supported=1
+	ro.oem_unlock_supported=0
 
 ifneq ($(BOARD_WITHOUT_RADIO),true)
 # Include vendor telephony soong namespace
@@ -847,8 +847,6 @@ endif
 PRODUCT_PACKAGES += \
 	vndk-libs
 
-PRODUCT_ENFORCE_RRO_TARGETS := \
-	framework-res
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
