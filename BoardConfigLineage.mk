@@ -37,14 +37,9 @@ BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
 # Enable chain partition for vendor.
-BOARD_AVB_VBMETA_VENDOR := vendor
-BOARD_AVB_VBMETA_VENDOR_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
-BOARD_AVB_VBMETA_VENDOR_ALGORITHM := SHA256_RSA2048
-BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX_LOCATION := 3
 
 AB_OTA_PARTITIONS += \
-    vbmeta_vendor
+    
 
 # Reserve space for gapps install
 ifneq ($(WITH_GMS),true)
@@ -57,7 +52,6 @@ BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 92160000
 endif
 
 # Verified Boot
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 
 # even though we include vendor/axp/config/common.mk we need to include AXP's own BoardConfig
 # (after the above definitions & includes), too so we we can make use of the conditions within
